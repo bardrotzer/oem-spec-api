@@ -10,7 +10,11 @@ app = FastAPI()
 async def root():
     return {"message": 'this is the root of the api'}
 
-
+# this is where we post a models
+# aka:
+#   {
+#    "model": "2022 Tesla Model S"
+#   }
 @app.post('/models')
 async def models(model: str = Body(..., embed=True)):
     # read the image file

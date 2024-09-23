@@ -48,7 +48,7 @@ class CarData(BaseModel):
 class CarDataList(BaseModel):
   trims: List[CarData]
 
-
+# start building something new
 def get_vehicle_data(model: str):
   # Create the completion using the OpenAi api
   completion = client.beta.chat.completions.parse(
@@ -114,25 +114,3 @@ def get_system_message():
 def get_user_message(model):
   msg = f"""Find specs for {model} in Sweden."""
   return msg   
-
-   # Trim options available in Sweden, Car body type, Fuel type, Battery capacity (if applicable), Range (WTLP), Acceleration (0-100 kph), Charging speed, Max horsepower, Fuel consumption (if applicable), Vehicle dimensions (width, height, length), Cargo capacity, Max tow weight, Vehicle weight, and availability of Apple CarPlay and Android Auto. If any data points are uncertain, it will state so. The GPT prioritizes accuracy and thoroughness over speed."""
-    # OEM: str
-    # Model: str
-    # Car_body_type: str
-    # Variant: str
-    # Fuel_type: str
-    # Antall_seter: int
-    # Battery_capacity: Optional[str]
-    # Range_WLTP: Optional[str]
-    # Trim_options: str
-    # Acceleration_0_100_kmh: Optional[str]
-    # Charging_speed: Optional[str]
-    # Max_horsepower: Optional[str]
-    # Fuel_consumption: Optional[str]
-    # Width: str
-    # Height: str
-    # Length: str
-    # Cargo_capacity: Optional[str]
-    # Max_tow_weight: Optional[str]
-    # Vehicle_weight: Optional[str]
-    # Apple_CarPlay_Android_Auto: str
