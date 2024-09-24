@@ -23,5 +23,12 @@ async def models(model: str = Body(..., embed=True)):
     prediction = get_vehicle_data(model)
     return prediction
 
+@app.get("/delay/{seconds}")
+def delay_setting(seconds: int):
+    import time
+    time.sleep(seconds)
+    return {"message": f"Delayed for {seconds} seconds"}
+
+
 if __name__ == "__main__":
     uvicorn.run("app:app", host="0.0.0.0", port=8000, reload=True)
